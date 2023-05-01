@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class User {
 
-    private final LocalDate birthDate;
-    private final String name;
+    private LocalDate birthDate;
+    private String name;
     private Integer id;
 
     public User(Integer id, String name, LocalDate birthDate) {
@@ -13,6 +13,11 @@ public class User {
         this.name = name;
         this.birthDate = birthDate;
     }
+
+//    public User(String name, LocalDate birthDate) {
+//        this.name = name;
+//        this.birthDate = birthDate;
+//    }
 
     public LocalDate getBirthDate() {
         return birthDate;
