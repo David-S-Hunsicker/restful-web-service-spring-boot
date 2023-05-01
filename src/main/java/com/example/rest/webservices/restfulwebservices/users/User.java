@@ -14,11 +14,6 @@ public class User {
         this.birthDate = birthDate;
     }
 
-//    public User(String name, LocalDate birthDate) {
-//        this.name = name;
-//        this.birthDate = birthDate;
-//    }
-
     public LocalDate getBirthDate() {
         return birthDate;
     }
