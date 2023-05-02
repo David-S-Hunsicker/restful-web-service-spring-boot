@@ -1,11 +1,16 @@
 package com.example.rest.webservices.restfulwebservices.users;
 
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class User {
 
-    private LocalDate birthDate;
-    private String name;
+    @Past
+    private final LocalDate birthDate;
+    @Size(min = 2)
+    private final String name;
     private Integer id;
 
     public User(Integer id, String name, LocalDate birthDate) {
