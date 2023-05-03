@@ -23,7 +23,6 @@ public class User {
     @Id
     @GeneratedValue
     private Integer id;
-
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<Post> posts;
@@ -35,6 +34,14 @@ public class User {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public LocalDate getBirthDate() {
