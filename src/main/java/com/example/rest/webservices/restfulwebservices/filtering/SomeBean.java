@@ -1,13 +1,17 @@
 package com.example.rest.webservices.restfulwebservices.filtering;
 
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
     private final String field1;
-    @JsonIgnore
+
     private final String field2;
     private final String field3;
+    @JsonIgnore
+    private final String ignoredString = "Ignored";
 
     public SomeBean(String val1, String val2, String val3) {
         this.field1 = val1;
@@ -19,7 +23,6 @@ public class SomeBean {
         return field1;
     }
 
-    @JsonIgnore
     public String getField2() {
         return field2;
     }
@@ -30,6 +33,11 @@ public class SomeBean {
 
     @Override
     public String toString() {
-        return "SomeBean{" + "field1='" + field1 + '\'' + ", field2='" + field2 + '\'' + ", field3='" + field3 + '\'' + '}';
+        return "SomeBean{" +
+                "field1='" + field1 + '\'' +
+                ", field2='" + field2 + '\'' +
+                ", field3='" + field3 + '\'' +
+                ", ignoredString='" + ignoredString + '\'' +
+                '}';
     }
 }
